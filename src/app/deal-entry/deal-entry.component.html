@@ -1,0 +1,81 @@
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<div class="container">
+<h3 style="width:100%; height:50px ;background:grey">Deal Entry</h3>
+
+
+<form novalidate 
+[formGroup]="myGroup" (ngSubmit)="save()" >
+
+
+ <div class="form-row">
+    <label class="col-md-2">Branch:</label>
+    <div class="col-md-3">
+      <input type="text" class="form-control" formControlName="branch" >
+    </div>
+    <label class="col-md-2">Currency:</label>
+    <div class="col-md-1">
+      <!--<input type="text" class="form-control" formControlName="currency">-->
+    <select>
+      <option value="">Select User</option>    
+          <option *ngFor="let u of currency" [ngValue]="u">{{u}}</option>
+      </select>
+    </div>
+  </div> 
+ 
+     
+  <div class="form-row">
+      <label class="col-md-2">Caterpillar Name:</label>
+      <div class="col-md-3">
+        <input type="text" class="form-control" formControlName="caterpillarName" >
+      </div>
+      <label class="col-md-2">Strip Cycle:</label>
+      <div class="col-md-1">
+        <!--<input type="text" class="form-control" formControlName="currency">-->
+      <select>
+           
+            <option *ngFor="let u of stripCycle" [ngValue]="u">{{u}}</option>
+        </select>
+      </div>
+    </div> 
+
+     
+    <div class="form-row">
+        <label class="col-md-2">Description:</label>
+        <div class="col-md-3">
+          
+        <select>
+             
+              <option *ngFor="let u of description" [ngValue]="u">{{u}}</option>
+          </select>
+        </div>
+        
+
+        <label class="col-md-2">Start Date:</label>
+        <div class="col-md-3">
+          <input type="text" class="form-control" formControlName="startDate"  >
+        </div>
+    </div>
+
+    <div class="form-row">
+        <label class="col-md-2">Product Type:</label>
+        <div class="col-md-3">
+          <input type="text" class="form-control" formControlName="productType" >
+        </div>
+        
+        <div class="col-md-1">
+            <label class="col-md-1">Notional Amount:</label>
+          <!--<input type="text" class="form-control" formControlName="currency">-->
+          <input type="text"pattern="0-9" class="form-control" formControlName="notionalAmount" >
+        </div>
+      </div> 
+
+
+  
+</form>
+
+</div>
