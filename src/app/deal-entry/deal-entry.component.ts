@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'deal-entry',
@@ -26,7 +26,27 @@ export class DealEntryComponent implements OnInit {
    currency = ['INR', 'USD', 'OHI', 'VAS'];
    stripCycle =['Weekly','Monthly'];
    description =['Weekly','Monthly'];
-  save(){
-
+   vectorAllocation=[
+     { tenor:"ON",
+       fundAllocationPer:"40%",
+       fundAllocation:"22121221",
+       legalReserve:"11%",
+       legalReserveAmt:"50,000",
+       benchMarkAdjPerc:"89%",
+       benchMarkAdjAmt:"116,358",
+      netAllocation:"891,442"
+     },
+     { tenor:"1y",
+     fundAllocationPer:"40%",
+     fundAllocation:"22121221",
+     legalReserve:"11%",
+     legalReserveAmt:"150,000",
+     benchMarkAdjPerc:"89%",
+     benchMarkAdjAmt:"11,16,358",
+    netAllocation:"88,91,442"
+   }
+   ]
+  save(formValues :FormGroup){
+  console.log(formValues);
   }
 }
